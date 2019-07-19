@@ -1,0 +1,32 @@
+<%include partials/header%>
+
+<div class="ui items container segment">
+    <%for(var i=0;i<blogs.length;i++){%>
+          <div class="item">
+              <div class="image">
+                  <img  src="<%=blogs[i].image%>">
+              </div>
+             <div class="content">
+                 <div class="header">
+                     <h2><%=blogs[i].title%></h2>
+                 </div>
+                 <div class="meta">
+                     <span><%=blogs[i].created.toDateString()%></span>
+                 </div>
+                 <div class="description">
+                     <p><%-blogs[i].body.substring(0,100)%>...</p>
+                 </div>
+                 <div class="extra">
+                     <a href="/blogs/<%=blogs[i]._id%>">Read More</a>
+                 </div>
+             </div>
+          </div>
+          <%if(i!=blogs.length-1){%>
+            <hr>
+          <%}%>
+    <%}%> 
+</div>
+        
+<%include partials/footer%>       
+    
+    
